@@ -70,7 +70,8 @@ export function createApi({ dataDir, getRooms, getRoomAddress, matchmaking, getO
   async function dispatch(path, b, req) {
     const user = sessionUser(b.token);
     if (path === 'register_legacy.php' || path === 'login_legacy.php') {
-      const ip = req.socket?.remoteAddress || 'local';
+      // A reverse proxy gives every player the same IP; keep account buckets separate.
+      const ip = `${req.socket?.remoteAddress || 'local'}:${hash(String(b.username ?? '').toLowerCase())}`;
       const now = Date.now();
       for (const [key, value] of attempts) if (value.until < now) attempts.delete(key);
       const rate = attempts.get(ip) || { count: 0, until: now + 60000 };
@@ -286,7 +287,7 @@ export function createApi({ dataDir, getRooms, getRoomAddress, matchmaking, getO
         res.statusCode = 400; result = fail('data_invalid');
       } else {
         try { result = await dispatch(path, body, req); }
-        catch (error) { console.error('Local API error:', path, error.message); res.statusCode = 500; result = fail('server_error'); }
+        catch (error) { console.error('Local API error:', path, error.message); res.statusCode = error.code === 'ERR_SQLITE_ERROR' && error.errcode === 13 ? 507 : 500; result = fail(res.statusCode === 507 ? 'storage_full' : 'server_error'); }
       }
       res.setHeader('Content-Type', `${path.endsWith('.txt') ? 'text/plain' : 'application/json'}; charset=utf-8`);
       res.setHeader('Cache-Control', 'no-store');

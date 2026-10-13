@@ -11,6 +11,8 @@ export function createStore(dataDir) {
     PRAGMA foreign_keys = ON;
     PRAGMA journal_mode = WAL;
     PRAGMA busy_timeout = 5000;
+    -- Bound disk growth without deleting saved player content.
+    PRAGMA max_page_count = 262144;
     CREATE TABLE IF NOT EXISTS users (
       id INTEGER PRIMARY KEY, name TEXT NOT NULL COLLATE NOCASE UNIQUE,
       password TEXT NOT NULL, xp INTEGER NOT NULL DEFAULT 0,

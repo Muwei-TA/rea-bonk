@@ -16,38 +16,37 @@
   let roomAddress = '';
   document.getElementById('newbonklobby_linkbutton').addEventListener('click', async event => {
     event.stopImmediatePropagation();
-    const url = `${parent.location.origin}/?room=${encodeURIComponent(roomAddress)}`;
+    const url = `${parent.location.origin}/?id=${encodeURIComponent(roomAddress)}`;
     let copied = false;
     try { await navigator.clipboard.writeText(url); copied = true; } catch {}
     const line = document.createElement('div');
-    line.textContent = `* ${copied ? 'Invite link copied' : 'Invite link'}: ${url}`;
+    line.textContent = `* ${copied ? '邀请链接已复制' : '邀请链接'}: ${url}`;
     document.getElementById('newbonklobby_chat_content').appendChild(line);
   }, true);
-  const invite = new URL(parent.location.href).searchParams.get('room');
+  const invite = new URL(parent.location.href).searchParams.get('id') || new URL(parent.location.href).searchParams.get('room');
   if (invite) {
     const pending = setInterval(async () => {
       if (!document.getElementById('pretty_top_name').textContent.trim() || !window.__localInviteJoin) return;
       clearInterval(pending);
       try {
         const result = await $.post('/scripts/getroomaddress.php', { id: invite });
-        if (result.r !== 'success') throw new Error('Room no longer exists');
-        const password = result.password ? window.prompt('Room password') : '';
+        if (result.r !== 'success') throw new Error('房间已不存在');
+        const password = result.password ? window.prompt('房间密码') : '';
         if (password !== null) window.__localInviteJoin(result.address, result.roomname, password);
       } catch (error) { window.alert(error.message); }
     }, 250);
   }
   window.__localRequire = function (dependencies, callback) {
+    // Only readiness is needed by the retained protocol; no RTC connection is created.
+    define('server-transport', [], () => ({ peerjs: { Peer: class {
+      constructor() { this.connections = {}; window.__localPeers.push(this); }
+      on(event, callback) { if (event === 'open') queueMicrotask(() => callback(guestID)); return this; }
+      destroy() {}
+    } } }));
+    dependencies[1] = 'server-transport';
     return requirejs(dependencies, function (io, module, box) {
-      const OriginalPeer = module.peerjs.Peer;
-      class LocalPeer extends OriginalPeer {
-        constructor() {
-          super({ host: location.hostname, port: window.__localConfig.peerPort, path: '/myapp', key: 'peerjs', secure: false, config: { iceServers: [] } });
-          window.__localPeers.push(this);
-        }
-      }
-      module.peerjs.Peer = LocalPeer;
       const localIO = function (url, options) {
-        const socket = io(location.origin, { ...options, forceNew: true });
+        const socket = io(location.origin, { ...options, forceNew: true, transports: ['websocket'] });
         const emit = socket.emit.bind(socket);
         socket.emit = function (event, data, ...rest) {
           if ([12, 13, '12', '13'].includes(event) && data?.guest) data = { ...data, guestID };

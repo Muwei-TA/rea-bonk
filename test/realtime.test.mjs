@@ -128,3 +128,23 @@ test('guest bans survive normal peer reconnects within the same tab identity', a
   const denied = event(c, 16); c.emit(13, { ...bobProfile, peerID: 'new-peer-after-reconnect', joinID: room.address, roomPassword: '' });
   assert.match((await denied)[0], /banned/i); assert.equal(room.players.filter(Boolean).length, 1);
 });
+
+test('server-relayed inputs stay in their room and accept full Unicode forum nicknames', async t => {
+  const { a, b, room, url, profile } = await twoPlayerRoom(t);
+  const c = client(url, { forceNew: true, transports: ['websocket'] });
+  t.after(() => c.close()); await event(c, 'connect');
+  const created = event(c, 2);
+  const name = '社团😀'.repeat(20);
+  c.emit(12, { ...profile(name), peerID: '', roomName: '隔离房间', maxPlayers: 8 });
+  await created;
+  const started = event(a, 15);
+  a.emit(5, { is: 'state', gs: { map: 'map' } }); await started;
+  let leaked = false, duplicated = false;
+  c.on('7', () => { leaked = true; });
+  const input = event(b, 7); a.emit(4, { i: 18, f: 0, c: 0 });
+  assert.deepEqual(await input, [0, { i: 18, f: 0, c: 0 }]);
+  b.on('7', () => { duplicated = true; }); a.emit(4, { i: 18, f: 0, c: 0 });
+  const barrier = event(a, 1); a.emit(2); await barrier;
+  assert.equal(leaked, false); assert.equal(duplicated, false);
+  assert.equal(room.players[0].userName, 'Alice');
+});
