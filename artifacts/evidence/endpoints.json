@@ -1,0 +1,242 @@
+[
+  {
+    "method_candidate": "post",
+    "url": "https://bonk2.io/scripts/map_fave.php",
+    "derived_line": 1404,
+    "evidence": "static callsite, not network acceptance"
+  },
+  {
+    "method_candidate": "post",
+    "url": "https://bonk2.io/scripts/map_fave.php",
+    "derived_line": 2902,
+    "evidence": "static callsite, not network acceptance"
+  },
+  {
+    "method_candidate": "post",
+    "url": "https://bonk2.io/scripts/getrooms.php",
+    "derived_line": 3979,
+    "evidence": "static callsite, not network acceptance"
+  },
+  {
+    "method_candidate": "post",
+    "url": "https://bonk2.io/scripts/replay_get.php",
+    "derived_line": 9349,
+    "evidence": "static callsite, not network acceptance"
+  },
+  {
+    "method_candidate": "post",
+    "url": "https://bonk2.io/scripts/replay_report.php",
+    "derived_line": 9607,
+    "evidence": "static callsite, not network acceptance"
+  },
+  {
+    "method_candidate": "post",
+    "url": "https://bonk2.io/scripts/register_legacy.php",
+    "derived_line": 20411,
+    "evidence": "static callsite, not network acceptance"
+  },
+  {
+    "method_candidate": "post",
+    "url": "https://bonk2.io/scripts/login_legacy.php",
+    "derived_line": 20724,
+    "evidence": "static callsite, not network acceptance"
+  },
+  {
+    "method_candidate": "post",
+    "url": "https://bonk2.io/scripts/account_changepassword.php",
+    "derived_line": 20865,
+    "evidence": "static callsite, not network acceptance"
+  },
+  {
+    "method_candidate": "post",
+    "url": "https://bonk2.io/scripts/friends.php",
+    "derived_line": 20960,
+    "evidence": "static callsite, not network acceptance"
+  },
+  {
+    "method_candidate": "post",
+    "url": "https://bonk2.io/scripts/map_fave.php",
+    "derived_line": 21027,
+    "evidence": "static callsite, not network acceptance"
+  },
+  {
+    "method_candidate": "post",
+    "url": "https://bonk2.io/scripts/login_auto.php",
+    "derived_line": 21597,
+    "evidence": "static callsite, not network acceptance"
+  },
+  {
+    "method_candidate": "post",
+    "url": "https://bonk2.io/scripts/getroomaddress.php",
+    "derived_line": 21905,
+    "evidence": "static callsite, not network acceptance"
+  },
+  {
+    "method_candidate": "post",
+    "url": "https://bonk2.io/scripts/friends.php",
+    "derived_line": 21967,
+    "evidence": "static callsite, not network acceptance"
+  },
+  {
+    "method_candidate": "post",
+    "url": "https://bonk2.io/scripts/matchmaking_query.php",
+    "derived_line": 22086,
+    "evidence": "static callsite, not network acceptance"
+  },
+  {
+    "method_candidate": "post",
+    "url": "https://bonk2.io/scripts/friends.php",
+    "derived_line": 22346,
+    "evidence": "static callsite, not network acceptance"
+  },
+  {
+    "method_candidate": "post",
+    "url": "https://bonk2.io/scripts/account_savecontrols.php",
+    "derived_line": 22397,
+    "evidence": "static callsite, not network acceptance"
+  },
+  {
+    "method_candidate": "post",
+    "url": "https://bonk2.io/scripts/friends.php",
+    "derived_line": 23118,
+    "evidence": "static callsite, not network acceptance"
+  },
+  {
+    "method_candidate": "post",
+    "url": "https://bonk2.io/scripts/friends.php",
+    "derived_line": 23876,
+    "evidence": "static callsite, not network acceptance"
+  },
+  {
+    "method_candidate": "post",
+    "url": "https://bonk2.io/scripts/login_clearauto.php",
+    "derived_line": 23943,
+    "evidence": "static callsite, not network acceptance"
+  },
+  {
+    "method_candidate": "get",
+    "url": "https://bonk2.io/scripts/combinedplayercount.txt",
+    "derived_line": 24040,
+    "evidence": "static callsite, not network acceptance"
+  },
+  {
+    "method_candidate": "post",
+    "url": "https://bonk2.io/scripts/map_getsearch.php",
+    "derived_line": 30941,
+    "evidence": "static callsite, not network acceptance"
+  },
+  {
+    "method_candidate": "post",
+    "url": "https://bonk2.io/scripts/map_getfresh.php",
+    "derived_line": 30965,
+    "evidence": "static callsite, not network acceptance"
+  },
+  {
+    "method_candidate": "post",
+    "url": "https://bonk2.io/scripts/map_getfave.php",
+    "derived_line": 30985,
+    "evidence": "static callsite, not network acceptance"
+  },
+  {
+    "method_candidate": "post",
+    "url": "https://bonk2.io/scripts/map_getown.php",
+    "derived_line": 31124,
+    "evidence": "static callsite, not network acceptance"
+  },
+  {
+    "method_candidate": "post",
+    "url": "https://bonk2.io/scripts/map_b1_getfave.php",
+    "derived_line": 31168,
+    "evidence": "static callsite, not network acceptance"
+  },
+  {
+    "method_candidate": "post",
+    "url": "https://bonk2.io/scripts/map_b1_getown.php",
+    "derived_line": 31191,
+    "evidence": "static callsite, not network acceptance"
+  },
+  {
+    "method_candidate": "post",
+    "url": "https://bonk2.io/scripts/map_b1_getbest.php",
+    "derived_line": 31213,
+    "evidence": "static callsite, not network acceptance"
+  },
+  {
+    "method_candidate": "post",
+    "url": "https://bonk2.io/scripts/map_b1_getsearch.php",
+    "derived_line": 31252,
+    "evidence": "static callsite, not network acceptance"
+  },
+  {
+    "method_candidate": "post",
+    "url": "https://bonk2.io/scripts/map_delete.php",
+    "derived_line": 31665,
+    "evidence": "static callsite, not network acceptance"
+  },
+  {
+    "method_candidate": "post",
+    "url": "https://bonk2.io/scripts/map_fave.php",
+    "derived_line": 32303,
+    "evidence": "static callsite, not network acceptance"
+  },
+  {
+    "method_candidate": "post",
+    "url": "https://bonk2.io/scripts/avatar_update.php",
+    "derived_line": 32705,
+    "evidence": "static callsite, not network acceptance"
+  },
+  {
+    "method_candidate": "post",
+    "url": "https://bonk2.io/scripts/avatar_update.php",
+    "derived_line": 32847,
+    "evidence": "static callsite, not network acceptance"
+  },
+  {
+    "method_candidate": "post",
+    "url": "https://bonk2.io/scripts/friends.php",
+    "derived_line": 33665,
+    "evidence": "static callsite, not network acceptance"
+  },
+  {
+    "method_candidate": "post",
+    "url": "https://bonk2.io/scripts/friends.php",
+    "derived_line": 34532,
+    "evidence": "static callsite, not network acceptance"
+  },
+  {
+    "method_candidate": "post",
+    "url": "https://bonk2.io/scripts/map_save_pub.php",
+    "derived_line": 37355,
+    "evidence": "static callsite, not network acceptance"
+  },
+  {
+    "method_candidate": "post",
+    "url": "https://bonk2.io/scripts/map_save_pub.php",
+    "derived_line": 37393,
+    "evidence": "static callsite, not network acceptance"
+  },
+  {
+    "method_candidate": "post",
+    "url": "https://bonk2.io/scripts/replay_submit.php",
+    "derived_line": 44547,
+    "evidence": "static callsite, not network acceptance"
+  },
+  {
+    "method_candidate": "post",
+    "url": "https://bonk2.io/scripts/replay_submit.php",
+    "derived_line": 44627,
+    "evidence": "static callsite, not network acceptance"
+  },
+  {
+    "method_candidate": "post",
+    "url": "https://bonk2.io/scripts/friends.php",
+    "derived_line": 45824,
+    "evidence": "static callsite, not network acceptance"
+  },
+  {
+    "method_candidate": "post",
+    "url": "https://bonk2.io/scripts/matchmaking_maps.php",
+    "derived_line": 46339,
+    "evidence": "static callsite, not network acceptance"
+  }
+]

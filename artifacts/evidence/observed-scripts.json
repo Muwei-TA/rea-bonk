@@ -1,0 +1,167 @@
+{
+  "source_evidence_id": "ev_ed1bceb2a68a34417f881a1812f6358ff2769fa98a9a1ae5f19ff8b4d5ab765c",
+  "scripts": [
+    {
+      "script_key": "scr_07d4ab04eb569d76c4d7148c4e7b36573741ef9ce62326501df80c9ece80705a",
+      "url": "https://bonk.io/js/moment.min.js",
+      "artifact_sha256": "e22419e8154be2a34a950dbb4c4c448413751c53ef02f00c6c56af28aa2c4964",
+      "bytes": 53324
+    },
+    {
+      "script_key": "scr_0b5ea849eb27b9503dc6675a2a38ce451a042f9ede7d750e33cb784a3e45e900",
+      "url": "https://bonk.io/GameResources.js",
+      "artifact_sha256": "ce5fe7d6ac02b57614cc68e8260d510f72e4ec4fcb87db5f0b4cc30f51271ccd",
+      "bytes": 3621667
+    },
+    {
+      "script_key": "scr_0fa22b6f514906c04ea5e15a2645cd806c729635bfcc9b85a549903219e9a81b",
+      "url": "https://bonk.io/js/SafeTrig.js",
+      "artifact_sha256": "d1d09e414ba4c16bfb9ce8492f135bbc87b581c364a3b91019c4f93a18557b08",
+      "bytes": 989
+    },
+    {
+      "script_key": "scr_1dc0407cbe90a84a7fbe5d4f6c58e2f2141d01c6de8a3b576c9571d3cd150a80",
+      "url": "https://bonk.io/js/physics/box2dweb/Box2DModuleGJMod.js",
+      "artifact_sha256": "0f7645c88f53b51b731819c2f8ee3d9af5040c3c741371f8b1ff82c2074f3a83",
+      "bytes": 432463
+    },
+    {
+      "script_key": "scr_1eab4f7faf3e94c09d4ecb3aaf6879a75b6d12f327b63652d2409d415c85d923",
+      "url": "https://bonk.io/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js",
+      "artifact_sha256": "2595496fe48df6fcf9b1bc57c29a744c121eb4dd11566466bc13d2e52e6bbcc8",
+      "bytes": 1239
+    },
+    {
+      "script_key": "scr_1fc28be13a7d784620955a0c9203187264c32c6dbf4a186a15f82f7de26dcb8c",
+      "url": "https://bonk.io/js/require.js",
+      "artifact_sha256": "4948c3fe4b57cd92118ec7b89deb99ff0eb2586a02c5f454df21c1ecfc144c81",
+      "bytes": 17695
+    },
+    {
+      "script_key": "scr_2ac7ecc826be2f5387c66a613cdbafb17aa5f558c1e0dd14ebbdbb5c61ab27d0",
+      "url": "https://bonk.io/js/Tween.js",
+      "artifact_sha256": "36d13dd2f704fc3acca55f20fc1b794e091aae22b652974cab9225a8bffea9fe",
+      "bytes": 15416
+    },
+    {
+      "script_key": "scr_377209efecf19b79f20b30450a6b859164a2ab637172135dcafa567c11355fb0",
+      "url": "https://bonk.io/js/jQuery-FontSpy.js",
+      "artifact_sha256": "6f9152179c6758999eaecf7afe72f9c6c6c87f16a03d82fa8cefba8d3027f60b",
+      "bytes": 2397
+    },
+    {
+      "script_key": "scr_43bd6e7aedc9ee7fa280f06c9487478efc8637bb56e18932d3daecc8ba7a67d9",
+      "url": "https://bonk.io/js/alpha2s.js",
+      "artifact_sha256": "e549ed7b6840a908bc0e9c595321aa5e9dcfa787190bae9b60938e32dfa65c8e",
+      "bytes": 2699132
+    },
+    {
+      "script_key": "scr_59bbb7cf13a5a833d7086d2e893cce292f5da32c054b1046bdc7cfa93ac1a035",
+      "url": "https://bonk.io/js/pixi-legacy-540.min.js",
+      "artifact_sha256": "4ec11d199db234f6a26a065f14fd481ccee2e4b3397ab54044d5f9c25a687f7f",
+      "bytes": 606699
+    },
+    {
+      "script_key": "scr_730f97619b9fba174dddf139a39563d708099f9a483730b677026060094c0012",
+      "url": "https://bonk.io/js/jquery-3.3.1.min.js",
+      "artifact_sha256": "160a426ff2894252cd7cebbdd6d6b7da8fcd319c65b70468f10b6690c45d02ef",
+      "bytes": 86927
+    },
+    {
+      "script_key": "scr_77f331d1dac646da64fe82c5348acba5408a448bf302c9c7bc2fa6074ec3e10c",
+      "url": "https://bonk.io/js/timesync.min.js",
+      "artifact_sha256": "5628b6060b89e32df5cd57c51cf1e871aea2c12e78d5cfe2375a7f9d64897b68",
+      "bytes": 22833
+    },
+    {
+      "script_key": "scr_849e17d41f2dfaeda92b281430cc357682f1315de91ae8acaa4ee63c6c17e51e",
+      "url": "https://bonk.io/js/pson/bytebuffer.min.js",
+      "artifact_sha256": "10f18457a3b180efcd640fcf2cea3c619c0d3bae952cdff514974da6e1c9b1fa",
+      "bytes": 44835
+    },
+    {
+      "script_key": "scr_8a938a2e1faef3420e1f50be04ad03797722c7648ad9dfa685c4450ba9f5a2bb",
+      "url": "https://bonk.io/js/pixi-filters-311.js",
+      "artifact_sha256": "a5d4ea329d7a926ebae0acb2cb62ba9488d0890af6cb74ec29e78acb24ccd85e",
+      "bytes": 85075
+    },
+    {
+      "script_key": "scr_8e8f928f74e0069058f7cdce5e3f8d63f05b9150659622b73b42dbfe04d10db2",
+      "url": "https://bonk.io/js/pson/base64js.min.js",
+      "artifact_sha256": "e8dab711100d645179ffbab703bbd20c72adb6cb5f1e27947f9f9e168f56e08d",
+      "bytes": 2370
+    },
+    {
+      "script_key": "scr_9000f0eab328e5528cf0b8dd3b8a83b5511fe965053922414b946d77bb221fba",
+      "url": "https://bonk.io/js/colorpicker/color-picker.js",
+      "artifact_sha256": "1b6a45614e6e75a59f7758d00247130cdaaa1fcdab2e3a3450a3943461ab08f6",
+      "bytes": 18155
+    },
+    {
+      "script_key": "scr_90c3b622113e4abbd6c863f58b50906bc7cbe4f950f86901f9b5d66c6218e747",
+      "url": "https://bonk.io/js/socketio.js",
+      "artifact_sha256": "58f7853d60f73d94140eba459c333537629a74d57009f352e1c099efc6fbe93f",
+      "bytes": 60730
+    },
+    {
+      "script_key": "scr_9f46bf2e5e917f7f34cdbe6256868bbe4fb86fd75a24df685875d854d3b4cb8c",
+      "url": "https://bonk.io/js/anime.min.js",
+      "artifact_sha256": "8413288d9b962a87027e5c9a1bc4f5f4a06af4e95394adfd093c5bf005162a16",
+      "bytes": 17324
+    },
+    {
+      "script_key": "scr_a7c0bc6ce348f5aedfd42262454e54123524aec98395da1f991a734f12e2a973",
+      "url": "https://bonk.io/js/pson/PSON.min.js",
+      "artifact_sha256": "6660644732cba78d26000907e351f7aa15ada157922779ee27888a0999f91d19",
+      "bytes": 4926
+    },
+    {
+      "script_key": "scr_baaf04ad79242bc6972a2b842c58a4fe21f857bbb8ca765a15c0293b826097fb",
+      "url": "https://bonk.io/js/peer.min.js",
+      "artifact_sha256": "eb6cddc35a181978d69b8a96d09842b1e9c3a2b9b42923837ee2fab13af9d4f9",
+      "bytes": 153071
+    },
+    {
+      "script_key": "scr_c0b897c8068920fd2cbd2879e0a08a1288acd7177709c875b9a61b8f010986d1",
+      "url": "https://bonk.io/js/howler.min.js",
+      "artifact_sha256": "125eddcb1755a757b5bf4c608ebae9cebe7e04edbda703f441f978d150df7e22",
+      "bytes": 34747
+    },
+    {
+      "script_key": "scr_c1311e82923eafeb9b855fa137733591e016a335e4e8a39249567ba886ca3068",
+      "url": "https://bonk.io/js/lz-string.min.js",
+      "artifact_sha256": "9d1a0ef07a2ea5faa8cd4afb60a0518075e6771e341e5ff4e0e481cefedeecbf",
+      "bytes": 4719
+    },
+    {
+      "script_key": "scr_c62b81ee99d75f3b959c54757225a5da9472b041f7736121e416aa6f161ea780",
+      "url": "https://bonk.io/js/moment-timezone-with-data-10-year-range.min.js",
+      "artifact_sha256": "eab684eb76b05b5ca8a953efb67f14a7ebc4691f78fd6d1c29171354b93eb85a",
+      "bytes": 32782
+    },
+    {
+      "script_key": "scr_ccf81aa70a496721ff634e7907c5c90202c8a5e1ae0dd2f79e7cfa803b452a0f",
+      "url": "https://bonk.io/js/pako.js",
+      "artifact_sha256": "c26493b9040d943b9e101e1e642ca1f535e6337a3053186934ff86e7f8dcfe67",
+      "bytes": 221496
+    },
+    {
+      "script_key": "scr_dd73662c5a4143f7a6237c2f1819ef9331768e1cdb789a8ee4a7a7d3465a59eb",
+      "url": "https://bonk.io/js/pson/long.js",
+      "artifact_sha256": "3dd1844abdb7bf47915c390aa4d376af4c99931408af54448eb2bf9f67eb4396",
+      "bytes": 10421
+    },
+    {
+      "script_key": "scr_eaff3f50d112fb23d33d210a982c24d18b90520c9fbf6d478632ba6b78486da0",
+      "url": "https://bonk.io/js/pson/base64ArrayBuffer.js",
+      "artifact_sha256": "b0f541a4f3d3e6f29e31cbcff0c0fab81778afd490f04b9ff623a2a5d0098287",
+      "bytes": 3025
+    },
+    {
+      "script_key": "scr_fa9c1bb9170cc34e31d3d6fc1b27744137502d9f96086645bd30487d822e8b6a",
+      "url": "https://bonk.io/js/howler.spatial.min.js",
+      "artifact_sha256": "37ce2799bd2fd0ab6c6815f2251d34530d9dcc516feaf5f2679e5f9ee626dd20",
+      "bytes": 9336
+    }
+  ]
+}
