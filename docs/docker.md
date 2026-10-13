@@ -24,6 +24,8 @@ SQLite 使用 WAL，新数据库总大小限制为 1 GiB；到达上限拒绝新
 
 `deploy/blackroom.compose.yaml` 供现有站点部署使用：无宿主机端口，接入独立 `blackroom-games-bonk-backend`，只允许成员网关访问。需要先存在该网络并构建精确镜像。保持游戏 `id=bonk` 和 `origin=https://bonk.muwei.xyz`，将原登记条目的上游改为 `http://blackroom-rea-bonk:3210`，WS 规则改为 `[{"path":"/socket.io/","match":"prefix"}]`；保留完整清单其他游戏条目及原认证 key。
 
+客户端使用同源 `/gameframe-release.html` iframe。BlackRoom 网关默认追加 `frame-ancestors 'none'`，需应用 `deploy/blackroom-gateway-frame.patch` 并仅重建本款游戏的网关镜像，在清单和本款私有网关条目增加 `"same_origin_frame_paths":["/gameframe-release.html"]`。补丁只让该精确路径的已授权 2xx 响应允许同源父页；其他路径、匿名响应及其他游戏保持禁止嵌入。不放开跨域嵌入或成员门禁，不更换现有网关 key。独立 Docker 直接访问不需要此网关补丁。
+
 游戏读取同源 `GET /_blackroom/me` 的 `{username}` 填入真实游客昵称，允许手动修改，最多 60 个 Unicode 码点（120 UTF-16 单位）。资料失败留空手填，不恢复无法确认归属的旧昵称。游戏内账户是独立账户，只用于地图、皮肤等持久化，不授予论坛权限，也不使用论坛密码。
 
 邀请使用 `/?id=<不透明房间 UUID>`，兼容旧本项目 `/?room=`，密码不进入链接。邀请仍经成员网关登录与授权。旧站点版本的六位房间码不能迁移为本项目的房间 UUID；切换时旧对局结束，已有讨论和站点用户名保留。
