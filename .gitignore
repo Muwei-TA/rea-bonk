@@ -1,0 +1,5 @@
+node_modules/
+data/
+.DS_Store
+output/playwright/*profile*/
+output/playwright/fixture-data/
