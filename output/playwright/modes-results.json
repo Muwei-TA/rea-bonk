@@ -1,0 +1,48 @@
+{
+  "passed": true,
+  "results": [
+    {
+      "mode": "Classic",
+      "frame": 35,
+      "synchronized": true,
+      "players": 2,
+      "footballBall": false
+    },
+    {
+      "mode": "Arrows",
+      "frame": 42,
+      "synchronized": true,
+      "players": 2,
+      "footballBall": false
+    },
+    {
+      "mode": "Death Arrows",
+      "frame": 42,
+      "synchronized": true,
+      "players": 2,
+      "footballBall": false
+    },
+    {
+      "mode": "Grapple",
+      "frame": 41,
+      "synchronized": true,
+      "players": 2,
+      "footballBall": false
+    },
+    {
+      "mode": "VTOL",
+      "frame": 40,
+      "synchronized": true,
+      "players": 2,
+      "footballBall": false
+    },
+    {
+      "mode": "Football",
+      "frame": 38,
+      "synchronized": true,
+      "players": 2,
+      "footballBall": true
+    }
+  ],
+  "errors": []
+}

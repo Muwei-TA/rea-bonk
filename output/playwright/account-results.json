@@ -1,0 +1,96 @@
+{
+  "started": "2026-10-13T15:10:17.919Z",
+  "steps": [
+    {
+      "name": "registration",
+      "verified": "2026-10-13T15:10:18.929Z",
+      "evidence": {
+        "username": "GuiAlicemv6ti7qm",
+        "identity": {
+          "name": "GuiAlicemv6ti7qm",
+          "id": 1,
+          "guest": false
+        }
+      }
+    },
+    {
+      "name": "login",
+      "verified": "2026-10-13T15:10:23.597Z",
+      "evidence": {
+        "username": "GuiAlicemv6ti7qm"
+      }
+    },
+    {
+      "name": "skin_saved_reloaded",
+      "verified": "2026-10-13T15:11:07.844Z",
+      "evidence": {
+        "color": 8060705,
+        "encoded": "CgcDYQACCQEBAHr%2FIQ%3D%3D"
+      }
+    },
+    {
+      "name": "map_save_initial_failure",
+      "verified": "2026-10-13T15:12:59.250Z",
+      "evidence": {
+        "reason": "Original editor Any mode sends empty mo; API validation fixed; awaiting server reload"
+      }
+    },
+    {
+      "name": "registration",
+      "verified": "2026-10-13T15:13:00.695Z",
+      "evidence": {
+        "username": "GuiBobmv6tlok9",
+        "identity": {
+          "name": "GuiBobmv6tlok9",
+          "id": 2,
+          "guest": false
+        }
+      }
+    },
+    {
+      "name": "friend_request_accept_reciprocal",
+      "verified": "2026-10-13T15:15:18.170Z",
+      "evidence": {
+        "alice": "GuiAlicemv6ti7qm",
+        "bob": "GuiBobmv6tlok9"
+      }
+    },
+    {
+      "name": "map_save_gui",
+      "verified": "2026-10-13T15:15:51.744Z",
+      "evidence": {
+        "name": "GUI Arena mv6tkv20",
+        "geometry": "1 rectangle platform and 1 spawn drawn with mouse",
+        "mode": "Any",
+        "saveDialogClosed": true
+      }
+    },
+    {
+      "name": "map_save_reload_geometry",
+      "verified": "2026-10-13T15:21:40.274Z",
+      "evidence": {
+        "name": "GUI Arena mv6tkv20",
+        "shapes": 1,
+        "bodies": 1,
+        "spawns": 1,
+        "nativeEditorLoaded": true,
+        "screenshot": "account-map-reloaded.png"
+      }
+    }
+  ],
+  "errors": [],
+  "failedResponses": [],
+  "external": [],
+  "accounts": [
+    "GuiAlicemv6ti7qm",
+    "GuiBobmv6tlok9"
+  ],
+  "resolvedErrors": [
+    {
+      "description": "Error: Map save error\n    at Object.<anonymous> (http://127.0.0.1:3210/js/alpha2s.js:1:2518171)\n    at u (http://127.0.0.1:3210/js/jquery-3.3.1.min.js:2:27457)\n    at Object.fireWith [as resolveWith] (http://127.0.0.1:3210/js/jquery-3.3.1.min.js:2:28202)\n    at k (http://127.0.0.1:3210/js/jquery-3.3.1.min.js:2:77651)\n    at XMLHttpRequest.<anonymous> (http://127.0.0.1:3210/js/jquery-3.3.1.min.js:2:79907)",
+      "resolvedBy": "Allow empty Any mode; verified original UI save then load and native geometry decode"
+    }
+  ],
+  "finished": "2026-10-13T15:21:40.274Z",
+  "passed": true
+}

@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "scenario": "Two real guest clients: UI create/join, real P2P, chat, start, movement, equal same-frame physics",
+  "commonFrame": 43,
+  "players": 2,
+  "p2p": [
+    [
+      {
+        "peer": "227db0e0-ea09-409b-87b0-c6f3b6ea294f",
+        "open": true
+      }
+    ]
+  ],
+  "errors": [],
+  "missing": [],
+  "external": []
+}

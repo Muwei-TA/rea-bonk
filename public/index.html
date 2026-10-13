@@ -1,0 +1,257 @@
+<!doctype html>
+<html>
+<head>
+
+	<link rel="icon" 
+      type="image/png" 
+      href="graphics/tt/favicon-16x16.png"
+	  sizes="16x16">
+	<link rel="icon" 
+	      type="image/png" 
+	      href="graphics/tt/favicon-32x32.png"
+		  sizes="32x32">
+
+	<meta charset="utf-8">
+	<title>Bonk Local · 本地物理对战</title>
+
+	<link rel="preload" href="fonts/fptmed.otf" as="font" crossorigin="anonymous" />
+	<link rel="preload" href="fonts/fptbook.otf" as="font" crossorigin="anonymous" />
+	<link rel="preload" href="fonts/fptbook_fixed_5.otf" as="font" crossorigin="anonymous" />
+	<link rel="preload" href="fonts/fptb.otf" as="font" crossorigin="anonymous" />
+
+</head>
+
+
+
+
+
+<!-- debug  OLD POSTION! -->
+
+
+
+<!-- debug -->
+
+
+
+
+<link rel="stylesheet" type="text/css" href="css/roomlist.css">
+<link rel="stylesheet" type="text/css" href="css/checkbox.css">
+<link rel="stylesheet" type="text/css" href="css/maploadwindow.css">
+<link rel="stylesheet" type="text/css" href="css/leveleditor.css">
+<link rel="stylesheet" type="text/css" href="css/newbonklobby.css">
+<link rel="stylesheet" type="text/css" href="css/ingamechat.css">
+<link rel="stylesheet" type="text/css" href="css/simplemenu.css">
+<link rel="stylesheet" type="text/css" href="css/pagelayout.css">
+<link rel="stylesheet" type="text/css" href="css/skineditor.css">
+<link rel="stylesheet" type="text/css" href="css/mapeditor.css">
+<link rel="stylesheet" type="text/css" href="css/prettymenu.css">
+<link rel="stylesheet" type="text/css" href="css/classicactive.css" id="classicoverridecss">
+
+<link href="js/colorpicker/color-picker.css" rel="stylesheet">
+
+
+
+
+
+<body>
+
+
+
+
+
+<style>
+	
+
+	@font-face {
+	  font-family: futurept_light;
+	  src: url(fonts/fptl.otf);
+	}
+	@font-face {
+	  font-family: futurept_book;
+	  src: url(fonts/fptbook.otf);
+	}
+	@font-face {
+	  font-family: futurept_demi;
+	  src: url(fonts/futurapt_demi.otf);
+	}
+	@font-face {
+	  font-family: futurept_medium;
+	  src: url(fonts/fptmed.otf);
+	}
+	@font-face{
+		font-family: futurept_b1;
+		src: url(fonts/futurept_7a255.otf);
+	}
+	@font-face{
+		font-family: futurept_bold;
+		src: url(fonts/fptb.otf);
+	}
+	@font-face {
+	  font-family: futurept_demi_oblique;
+	  src: url(fonts/fptdo.otf);
+	}
+
+	@font-face {
+	  font-family: futurept_medium_oblique;
+	  src: url(fonts/fptmo.otf);
+	}
+
+	
+
+
+
+
+	#bgreplay{
+		width:100%;
+		height:100%;
+		overflow: hidden;
+		position: absolute;
+		top:0;
+	}
+
+	#gamerenderer{
+
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top:0px;
+		left:0px;
+
+		margin: auto;
+		overflow: hidden;
+		visibility: hidden;
+	}
+
+	#r3dcanvas{
+		position : absolute;
+		left: 50%;
+		top: 50%;
+		-webkit-transform: translate(-50%, -50%);
+		-moz-transform: translate(-50%, -50%);
+		-ms-transform: translate(-50%, -50%);
+		transform: translate(-50%, -50%);
+	}
+
+	#gamethumbbox {
+
+		width: 150px;
+		display: inline-block;
+		text-align: center;
+		text-decoration: none;
+		color:#ffffff;
+		text-shadow: 1px 1px 3px #000000;
+		font-family: Tahoma, Geneva, sans-serif;
+    	font-size: 13px;
+
+	}
+
+	#gamethumbbox a, a:visited{
+
+		text-decoration: none;
+		color: #ffffff; 
+
+	}
+
+	#gamethumbbox img { 
+		border: 3px solid #222644; 
+	}
+
+	.thumbbox_name{
+		display: block;
+    	margin-top: -17px;
+	}
+	.thumbbox_count{
+		margin-top: -15px;
+    	display: block;
+	}
+
+
+
+	@-webkit-keyframes shakeanim {
+		0% { -webkit-transform: translate(2px, 1px) rotate(0deg); }
+		10% { -webkit-transform: translate(-1px, -2px) rotate(-1deg); }
+		20% { -webkit-transform: translate(-3px, 0px) rotate(1deg); }
+		30% { -webkit-transform: translate(0px, 2px) rotate(0deg); }
+		40% { -webkit-transform: translate(1px, -1px) rotate(1deg); }
+		50% { -webkit-transform: translate(-1px, 2px) rotate(-1deg); }
+		60% { -webkit-transform: translate(-3px, 1px) rotate(0deg); }
+		70% { -webkit-transform: translate(2px, 1px) rotate(-1deg); }
+		80% { -webkit-transform: translate(-1px, -1px) rotate(1deg); }
+		90% { -webkit-transform: translate(2px, 2px) rotate(0deg); }
+		100% { -webkit-transform: translate(1px, -2px) rotate(-1deg); }
+	}
+	.shake:hover,
+	.shake:focus {
+		-webkit-animation-name: shakeanim;
+		-webkit-animation-duration: 0.4s;
+		-webkit-transform-origin:50% 50%;
+		-webkit-animation-iteration-count: infinite;
+		-webkit-animation-timing-function: linear;
+	}
+	.shake {
+		display:inline-block
+	}
+
+</style>
+
+<div id="bonkioheader">
+
+</div>
+
+<div id="adboxverticalleftCurse" style="display:none"></div>
+<div id="adboxverticalCurse" style="display:none"></div>
+<div style="position:absolute;top:24px;width:100%;text-align:center;color:white;font-family:sans-serif">BONK · LOCAL <span id="header_bonk_playercount"></span></div>
+<span id="header_car_playercount" style="display:none"></span>
+<iframe id="maingameframe" src="gameframe-release.html"></iframe>
+
+
+
+
+
+
+	
+
+
+
+<div id="descriptioncontainer">
+
+	<div id="descriptioninner">
+
+        <p class="descriptiontitle">Bonk Local · 本地物理对战</p>
+        <p class="descriptionpara">最多 8 人的物理对战。用方向键移动，按住 X 增加重量，把对手推下平台。支持 Classic、Arrows、Death Arrows、Grapple、VTOL 和 Football。</p>
+        <p class="descriptionpara">在同一台电脑打开两个浏览器窗口，选择不同游客昵称。PLAY → Custom Game 可创建或加入房间；房间里的链接按钮生成本地邀请链接。Quick Play 会自动匹配本地玩家并开局。</p>
+        <p class="descriptionpara">PICKS 收录 97 张客户端内置地图，保留原作者署名。Editor 可制作地图；注册本地账号后可保存地图、皮肤、键位和好友。本地账号数据保存在这台电脑。请创建新的本地账号。</p>
+        <p class="descriptionpara">对局开始并经过至少 5 秒的有效游戏后，点击顶部回放按钮录制最近片段。回到主菜单或刷新页面观看回放。足球沿用原客户端规则，不支持录制回放。</p>
+        <p class="descriptionpara">本地兼容复现基于公开客户端资源与 REA 分析，客户端原作者为 Chaz。服务端独立实现；原服账号、历史地图库与排行榜未迁移。</p>
+
+	</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+
+
+
+
+
+
+
+</html>

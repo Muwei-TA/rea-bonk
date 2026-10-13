@@ -1,0 +1,84 @@
+{
+  "started": "2026-10-13T15:46:03.704Z",
+  "steps": [
+    {
+      "name": "quick_create_autostart",
+      "verified": "2026-10-13T15:46:07.959Z",
+      "evidence": {
+        "mode": "Classic",
+        "maps": 97
+      }
+    },
+    {
+      "name": "quick_match_existing_late_join",
+      "verified": "2026-10-13T15:46:10.288Z",
+      "evidence": {
+        "mode": "Classic",
+        "frame": 110,
+        "players": 2,
+        "sameFrameStatesEqual": true,
+        "p2p": true
+      }
+    },
+    {
+      "name": "quick_create_autostart",
+      "verified": "2026-10-13T15:46:14.702Z",
+      "evidence": {
+        "mode": "Arrows"
+      }
+    },
+    {
+      "name": "quick_match_existing_late_join",
+      "verified": "2026-10-13T15:46:16.877Z",
+      "evidence": {
+        "mode": "Arrows",
+        "frame": 105,
+        "players": 2,
+        "sameFrameStatesEqual": true,
+        "p2p": true
+      }
+    },
+    {
+      "name": "quick_create_autostart",
+      "verified": "2026-10-13T15:46:21.250Z",
+      "evidence": {
+        "mode": "Grapple"
+      }
+    },
+    {
+      "name": "quick_match_existing_late_join",
+      "verified": "2026-10-13T15:46:23.438Z",
+      "evidence": {
+        "mode": "Grapple",
+        "frame": 106,
+        "players": 2,
+        "sameFrameStatesEqual": true,
+        "p2p": true
+      }
+    },
+    {
+      "name": "quick_create_autostart",
+      "verified": "2026-10-13T15:46:27.958Z",
+      "evidence": {
+        "mode": "Simple"
+      }
+    },
+    {
+      "name": "quick_match_existing_late_join",
+      "verified": "2026-10-13T15:46:30.122Z",
+      "evidence": {
+        "mode": "Simple",
+        "frame": 105,
+        "players": 2,
+        "sameFrameStatesEqual": true,
+        "p2p": true
+      }
+    }
+  ],
+  "errors": [],
+  "failedResponses": [],
+  "external": [],
+  "accounts": [],
+  "finished": "2026-10-13T15:46:30.181Z",
+  "passed": true
+}

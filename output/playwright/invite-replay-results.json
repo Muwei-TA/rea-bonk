@@ -1,0 +1,43 @@
+{
+  "started": "2026-10-13T15:44:38.605Z",
+  "steps": [
+    {
+      "name": "local_invite_link",
+      "verified": "2026-10-13T15:44:43.959Z",
+      "evidence": {
+        "url": "http://127.0.0.1:3210/?room=74785367-7827-48cc-86aa-3c4dd3ef7879",
+        "originalJoinFlow": true
+      }
+    },
+    {
+      "name": "record_button_response",
+      "verified": "2026-10-13T15:45:00.742Z",
+      "evidence": {
+        "chat": "* The last 15 seconds have been recorded to the main menu",
+        "frame": 373
+      }
+    },
+    {
+      "name": "record_real_match",
+      "verified": "2026-10-13T15:45:00.745Z",
+      "evidence": {
+        "id": 4,
+        "encodedBytes": 3561
+      }
+    },
+    {
+      "name": "replay_main_menu_playback",
+      "verified": "2026-10-13T15:45:02.291Z",
+      "evidence": {
+        "title": "Classic by Crabiki",
+        "canvasAnimated": true
+      }
+    }
+  ],
+  "errors": [],
+  "failedResponses": [],
+  "external": [],
+  "accounts": [],
+  "finished": "2026-10-13T15:45:02.379Z",
+  "passed": true
+}
