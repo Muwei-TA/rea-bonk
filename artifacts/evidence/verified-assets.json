@@ -1,0 +1,192 @@
+{
+  "scripts_verified": 31,
+  "core_matches_initial_download": true,
+  "scripts": [
+    {
+      "url": "https://bonk.io/js/moment.min.js",
+      "path": "artifacts/browser-sources/files/origins/de18a25b6b8f4e0b21c08cde5d0250d9b33fe5ea5ab03f1248fd92815fa5d3cb/js/moment.min.js",
+      "sha256": "e22419e8154be2a34a950dbb4c4c448413751c53ef02f00c6c56af28aa2c4964",
+      "bytes": 53324
+    },
+    {
+      "url": "https://bonk.io/GameResources.js",
+      "path": "artifacts/browser-sources/files/origins/de18a25b6b8f4e0b21c08cde5d0250d9b33fe5ea5ab03f1248fd92815fa5d3cb/GameResources.js",
+      "sha256": "ce5fe7d6ac02b57614cc68e8260d510f72e4ec4fcb87db5f0b4cc30f51271ccd",
+      "bytes": 3621667
+    },
+    {
+      "url": "https://bonk.io/js/SafeTrig.js",
+      "path": "artifacts/browser-sources/files/origins/de18a25b6b8f4e0b21c08cde5d0250d9b33fe5ea5ab03f1248fd92815fa5d3cb/js/SafeTrig.js",
+      "sha256": "d1d09e414ba4c16bfb9ce8492f135bbc87b581c364a3b91019c4f93a18557b08",
+      "bytes": 989
+    },
+    {
+      "url": "https://bonk.io/js/physics/box2dweb/Box2DModuleGJMod.js",
+      "path": "artifacts/browser-sources/files/origins/de18a25b6b8f4e0b21c08cde5d0250d9b33fe5ea5ab03f1248fd92815fa5d3cb/js/physics/box2dweb/Box2DModuleGJMod.js",
+      "sha256": "0f7645c88f53b51b731819c2f8ee3d9af5040c3c741371f8b1ff82c2074f3a83",
+      "bytes": 432463
+    },
+    {
+      "url": "https://bonk.io/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js",
+      "path": "artifacts/browser-sources/files/origins/de18a25b6b8f4e0b21c08cde5d0250d9b33fe5ea5ab03f1248fd92815fa5d3cb/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js",
+      "sha256": "2595496fe48df6fcf9b1bc57c29a744c121eb4dd11566466bc13d2e52e6bbcc8",
+      "bytes": 1239
+    },
+    {
+      "url": "https://bonk.io/js/require.js",
+      "path": "artifacts/browser-sources/files/origins/de18a25b6b8f4e0b21c08cde5d0250d9b33fe5ea5ab03f1248fd92815fa5d3cb/js/require.js",
+      "sha256": "4948c3fe4b57cd92118ec7b89deb99ff0eb2586a02c5f454df21c1ecfc144c81",
+      "bytes": 17695
+    },
+    {
+      "url": "https://bonk.io/js/Tween.js",
+      "path": "artifacts/browser-sources/files/origins/de18a25b6b8f4e0b21c08cde5d0250d9b33fe5ea5ab03f1248fd92815fa5d3cb/js/Tween.js",
+      "sha256": "36d13dd2f704fc3acca55f20fc1b794e091aae22b652974cab9225a8bffea9fe",
+      "bytes": 15416
+    },
+    {
+      "url": "https://bonk.io/js/jQuery-FontSpy.js",
+      "path": "artifacts/browser-sources/files/origins/de18a25b6b8f4e0b21c08cde5d0250d9b33fe5ea5ab03f1248fd92815fa5d3cb/js/jQuery-FontSpy.js",
+      "sha256": "6f9152179c6758999eaecf7afe72f9c6c6c87f16a03d82fa8cefba8d3027f60b",
+      "bytes": 2397
+    },
+    {
+      "url": "https://bonk.io/js/alpha2s.js",
+      "path": "artifacts/browser-sources/files/origins/de18a25b6b8f4e0b21c08cde5d0250d9b33fe5ea5ab03f1248fd92815fa5d3cb/js/alpha2s.js",
+      "sha256": "e549ed7b6840a908bc0e9c595321aa5e9dcfa787190bae9b60938e32dfa65c8e",
+      "bytes": 2699132
+    },
+    {
+      "url": "https://bonk.io/gameframe-release.html",
+      "path": "artifacts/browser-sources/files/isolated/source-10-025206d9b1be42a845cfa286ff36759a80b5db3b3589dfb08606c21735063b41.js",
+      "sha256": "2b4e2b084d02d23f69c0edee054fea000b6cd739ecd2e1ae7b43b4d43ea896ce",
+      "bytes": 128
+    },
+    {
+      "url": "https://bonk.io/js/pixi-legacy-540.min.js",
+      "path": "artifacts/browser-sources/files/origins/de18a25b6b8f4e0b21c08cde5d0250d9b33fe5ea5ab03f1248fd92815fa5d3cb/js/pixi-legacy-540.min.js",
+      "sha256": "4ec11d199db234f6a26a065f14fd481ccee2e4b3397ab54044d5f9c25a687f7f",
+      "bytes": 606699
+    },
+    {
+      "url": "https://bonk.io/js/jquery-3.3.1.min.js",
+      "path": "artifacts/browser-sources/files/origins/de18a25b6b8f4e0b21c08cde5d0250d9b33fe5ea5ab03f1248fd92815fa5d3cb/js/jquery-3.3.1.min.js",
+      "sha256": "160a426ff2894252cd7cebbdd6d6b7da8fcd319c65b70468f10b6690c45d02ef",
+      "bytes": 86927
+    },
+    {
+      "url": "https://bonk.io/gameframe-release.html",
+      "path": "artifacts/browser-sources/files/isolated/source-13-79812f50935d44db4509191fb2acb78a3a65b7a7a8a9fd914de7f2a66c0aa8c4.js",
+      "sha256": "1eb7fda4445bf8b07dafc38ab71beaf74a79d22460b9dfef287b4d05b848e79a",
+      "bytes": 585
+    },
+    {
+      "url": "https://bonk.io/js/timesync.min.js",
+      "path": "artifacts/browser-sources/files/origins/de18a25b6b8f4e0b21c08cde5d0250d9b33fe5ea5ab03f1248fd92815fa5d3cb/js/timesync.min.js",
+      "sha256": "5628b6060b89e32df5cd57c51cf1e871aea2c12e78d5cfe2375a7f9d64897b68",
+      "bytes": 22833
+    },
+    {
+      "url": "https://bonk.io/js/pson/bytebuffer.min.js",
+      "path": "artifacts/browser-sources/files/origins/de18a25b6b8f4e0b21c08cde5d0250d9b33fe5ea5ab03f1248fd92815fa5d3cb/js/pson/bytebuffer.min.js",
+      "sha256": "10f18457a3b180efcd640fcf2cea3c619c0d3bae952cdff514974da6e1c9b1fa",
+      "bytes": 44835
+    },
+    {
+      "url": "https://bonk.io/js/pixi-filters-311.js",
+      "path": "artifacts/browser-sources/files/origins/de18a25b6b8f4e0b21c08cde5d0250d9b33fe5ea5ab03f1248fd92815fa5d3cb/js/pixi-filters-311.js",
+      "sha256": "a5d4ea329d7a926ebae0acb2cb62ba9488d0890af6cb74ec29e78acb24ccd85e",
+      "bytes": 85075
+    },
+    {
+      "url": "https://bonk.io/js/pson/base64js.min.js",
+      "path": "artifacts/browser-sources/files/origins/de18a25b6b8f4e0b21c08cde5d0250d9b33fe5ea5ab03f1248fd92815fa5d3cb/js/pson/base64js.min.js",
+      "sha256": "e8dab711100d645179ffbab703bbd20c72adb6cb5f1e27947f9f9e168f56e08d",
+      "bytes": 2370
+    },
+    {
+      "url": "https://bonk.io/js/colorpicker/color-picker.js",
+      "path": "artifacts/browser-sources/files/origins/de18a25b6b8f4e0b21c08cde5d0250d9b33fe5ea5ab03f1248fd92815fa5d3cb/js/colorpicker/color-picker.js",
+      "sha256": "1b6a45614e6e75a59f7758d00247130cdaaa1fcdab2e3a3450a3943461ab08f6",
+      "bytes": 18155
+    },
+    {
+      "url": "https://bonk.io/js/socketio.js",
+      "path": "artifacts/browser-sources/files/origins/de18a25b6b8f4e0b21c08cde5d0250d9b33fe5ea5ab03f1248fd92815fa5d3cb/js/socketio.js",
+      "sha256": "58f7853d60f73d94140eba459c333537629a74d57009f352e1c099efc6fbe93f",
+      "bytes": 60730
+    },
+    {
+      "url": "https://bonk.io/js/anime.min.js",
+      "path": "artifacts/browser-sources/files/origins/de18a25b6b8f4e0b21c08cde5d0250d9b33fe5ea5ab03f1248fd92815fa5d3cb/js/anime.min.js",
+      "sha256": "8413288d9b962a87027e5c9a1bc4f5f4a06af4e95394adfd093c5bf005162a16",
+      "bytes": 17324
+    },
+    {
+      "url": "https://bonk.io/js/pson/PSON.min.js",
+      "path": "artifacts/browser-sources/files/origins/de18a25b6b8f4e0b21c08cde5d0250d9b33fe5ea5ab03f1248fd92815fa5d3cb/js/pson/PSON.min.js",
+      "sha256": "6660644732cba78d26000907e351f7aa15ada157922779ee27888a0999f91d19",
+      "bytes": 4926
+    },
+    {
+      "url": "https://bonk.io/",
+      "path": "artifacts/browser-sources/files/isolated/source-22-03cb31f567e57d422897c07d93332da1936999b70389f3b1afed6f7899a0841b.js",
+      "sha256": "ee5e073eac0f6b2b6defa793558fb601f41db15db4c5feb2e9615babf4523185",
+      "bytes": 1454
+    },
+    {
+      "url": "https://bonk.io/js/peer.min.js",
+      "path": "artifacts/browser-sources/files/origins/de18a25b6b8f4e0b21c08cde5d0250d9b33fe5ea5ab03f1248fd92815fa5d3cb/js/peer.min.js",
+      "sha256": "eb6cddc35a181978d69b8a96d09842b1e9c3a2b9b42923837ee2fab13af9d4f9",
+      "bytes": 153071
+    },
+    {
+      "url": "https://bonk.io/js/howler.min.js",
+      "path": "artifacts/browser-sources/files/origins/de18a25b6b8f4e0b21c08cde5d0250d9b33fe5ea5ab03f1248fd92815fa5d3cb/js/howler.min.js",
+      "sha256": "125eddcb1755a757b5bf4c608ebae9cebe7e04edbda703f441f978d150df7e22",
+      "bytes": 34747
+    },
+    {
+      "url": "https://bonk.io/js/lz-string.min.js",
+      "path": "artifacts/browser-sources/files/origins/de18a25b6b8f4e0b21c08cde5d0250d9b33fe5ea5ab03f1248fd92815fa5d3cb/js/lz-string.min.js",
+      "sha256": "9d1a0ef07a2ea5faa8cd4afb60a0518075e6771e341e5ff4e0e481cefedeecbf",
+      "bytes": 4719
+    },
+    {
+      "url": "https://bonk.io/js/moment-timezone-with-data-10-year-range.min.js",
+      "path": "artifacts/browser-sources/files/origins/de18a25b6b8f4e0b21c08cde5d0250d9b33fe5ea5ab03f1248fd92815fa5d3cb/js/moment-timezone-with-data-10-year-range.min.js",
+      "sha256": "eab684eb76b05b5ca8a953efb67f14a7ebc4691f78fd6d1c29171354b93eb85a",
+      "bytes": 32782
+    },
+    {
+      "url": "https://bonk.io/js/pako.js",
+      "path": "artifacts/browser-sources/files/origins/de18a25b6b8f4e0b21c08cde5d0250d9b33fe5ea5ab03f1248fd92815fa5d3cb/js/pako.js",
+      "sha256": "c26493b9040d943b9e101e1e642ca1f535e6337a3053186934ff86e7f8dcfe67",
+      "bytes": 221496
+    },
+    {
+      "url": "https://bonk.io/js/pson/long.js",
+      "path": "artifacts/browser-sources/files/origins/de18a25b6b8f4e0b21c08cde5d0250d9b33fe5ea5ab03f1248fd92815fa5d3cb/js/pson/long.js",
+      "sha256": "3dd1844abdb7bf47915c390aa4d376af4c99931408af54448eb2bf9f67eb4396",
+      "bytes": 10421
+    },
+    {
+      "url": "https://bonk.io/js/pson/base64ArrayBuffer.js",
+      "path": "artifacts/browser-sources/files/origins/de18a25b6b8f4e0b21c08cde5d0250d9b33fe5ea5ab03f1248fd92815fa5d3cb/js/pson/base64ArrayBuffer.js",
+      "sha256": "b0f541a4f3d3e6f29e31cbcff0c0fab81778afd490f04b9ff623a2a5d0098287",
+      "bytes": 3025
+    },
+    {
+      "url": "https://bonk.io/",
+      "path": "artifacts/browser-sources/files/isolated/source-30-1eb30b34916a4317be0cab6b9d62bc3f4c2ca389c77cb4c57c774355986350a3.js",
+      "sha256": "3330128d3bf9b4cf2c276771553190b87ff25ffaf8778d795105c7d6d13914e6",
+      "bytes": 159
+    },
+    {
+      "url": "https://bonk.io/js/howler.spatial.min.js",
+      "path": "artifacts/browser-sources/files/origins/de18a25b6b8f4e0b21c08cde5d0250d9b33fe5ea5ab03f1248fd92815fa5d3cb/js/howler.spatial.min.js",
+      "sha256": "37ce2799bd2fd0ab6c6815f2251d34530d9dcc516feaf5f2679e5f9ee626dd20",
+      "bytes": 9336
+    }
+  ]
+}

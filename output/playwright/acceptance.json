@@ -1,0 +1,113 @@
+{
+  "verified": "2026-10-13T15:47:21.073Z",
+  "unitTests": 14,
+  "clientSha256": "e549ed7b6840a908bc0e9c595321aa5e9dcfa787190bae9b60938e32dfa65c8e",
+  "scenarios": {
+    "browser": {
+      "passed": true,
+      "errors": [],
+      "missing": [],
+      "external": []
+    },
+    "modes": {
+      "passed": true,
+      "results": [
+        {
+          "mode": "Classic",
+          "frame": 35,
+          "synchronized": true,
+          "players": 2,
+          "footballBall": false
+        },
+        {
+          "mode": "Arrows",
+          "frame": 42,
+          "synchronized": true,
+          "players": 2,
+          "footballBall": false
+        },
+        {
+          "mode": "Death Arrows",
+          "frame": 42,
+          "synchronized": true,
+          "players": 2,
+          "footballBall": false
+        },
+        {
+          "mode": "Grapple",
+          "frame": 41,
+          "synchronized": true,
+          "players": 2,
+          "footballBall": false
+        },
+        {
+          "mode": "VTOL",
+          "frame": 40,
+          "synchronized": true,
+          "players": 2,
+          "footballBall": false
+        },
+        {
+          "mode": "Football",
+          "frame": 38,
+          "synchronized": true,
+          "players": 2,
+          "footballBall": true
+        }
+      ],
+      "errors": [],
+      "missing": [],
+      "external": []
+    },
+    "quick": {
+      "passed": true,
+      "steps": [
+        "quick_create_autostart",
+        "quick_match_existing_late_join",
+        "quick_create_autostart",
+        "quick_match_existing_late_join",
+        "quick_create_autostart",
+        "quick_match_existing_late_join",
+        "quick_create_autostart",
+        "quick_match_existing_late_join"
+      ],
+      "errors": [],
+      "missing": [],
+      "external": []
+    },
+    "account": {
+      "passed": true,
+      "steps": [
+        "registration",
+        "login",
+        "skin_saved_reloaded",
+        "map_save_initial_failure",
+        "registration",
+        "friend_request_accept_reciprocal",
+        "map_save_gui",
+        "map_save_reload_geometry"
+      ],
+      "errors": [],
+      "missing": [],
+      "external": []
+    },
+    "map-reload": {
+      "passed": true,
+      "errors": [],
+      "missing": [],
+      "external": []
+    },
+    "invite-replay": {
+      "passed": true,
+      "steps": [
+        "local_invite_link",
+        "record_button_response",
+        "record_real_match",
+        "replay_main_menu_playback"
+      ],
+      "errors": [],
+      "missing": [],
+      "external": []
+    }
+  }
+}
