@@ -2,11 +2,20 @@ import assert from 'node:assert/strict';
 import { createAccountCheck } from './account-browser-check.mjs';
 const check = await createAccountCheck('account');
 let a;
+// Remembered login can restore the original classic menu instead of the pretty menu.
+const visibleMenuButton = (c, ids) => check.evaluate(c, `return ${JSON.stringify(ids)}.find(id=>{const e=d.getElementById(id);if(!e)return false;const r=e.getBoundingClientRect(),hit=d.elementFromPoint(r.x+r.width/2,r.y+r.height/2);return r.width>0&&r.height>0&&!!hit&&(hit===e||e.contains(hit));});`);
+const openSkins = async c => check.click(c, await check.wait(()=>visibleMenuButton(c,['pretty_skinsbutton','classic_mid_skins']),'visible skins menu'));
+const openCustom = async c => {
+ const classic=await visibleMenuButton(c,['classic_mid_customgame']);
+ if(classic)await check.click(c,classic);
+ else {await check.click(c,'pretty_playbutton');await check.click(c,'sm_gameChoiceCustom');}
+ await check.click(c,'roomlistcreatebutton');
+};
 try {
  a = await check.newPage();
  const account=await check.register(a,'Save');
  const b=await check.newPage();await check.login(b,account);
- await check.click(a,'pretty_skinsbutton');await check.click(a,'skinmanager_skin1');await check.click(a,'skinmanager_edit');
+ await openSkins(a);await check.click(a,'skinmanager_skin1');await check.click(a,'skinmanager_edit');
  await check.click(a,'skineditor_layerbox_colorrect');
  const rect=await check.evaluate(a,"const r=d.getElementById('skineditor_colorpicker_canvas').getBoundingClientRect(),f=document.querySelector('iframe').getBoundingClientRect();return {x:r.x+f.x+55,y:r.y+f.y+100};");
  await a.send('Input.dispatchMouseEvent',{type:'mousePressed',...rect,button:'left',clickCount:1});
@@ -14,11 +23,11 @@ try {
  await check.click(a,'skineditor_colorpicker_savebutton');await check.click(a,'skineditor_savebutton');
  const color=await check.evaluate(a,"return d.getElementById('skineditor_layerbox_colorrect').style.backgroundColor;");
  await a.send('Page.reload',{ignoreCache:true});await check.wait(()=>check.evaluate(a,'return !!w.__localBonk?.context[61]?.userName&&!w.__localBonk.context[61].guest;'),'remembered account');
- await check.click(a,'pretty_skinsbutton');await check.click(a,'skinmanager_skin1');await check.click(a,'skinmanager_edit');
+ await openSkins(a);await check.click(a,'skinmanager_skin1');await check.click(a,'skinmanager_edit');
  const savedColor=await check.evaluate(a,"return d.getElementById('skineditor_layerbox_colorrect').style.backgroundColor;");assert.equal(savedColor,color);assert(color);
  await check.step('skin_saved_reloaded',{color,savedColor});await check.screenshot(a,'skin-reloaded');
  await check.click(a,'skineditor_cancelbutton');await check.click(a,'skinmanager_close');
- for(const id of ['pretty_playbutton','sm_gameChoiceCustom','roomlistcreatebutton'])await check.click(a,id);
+ await openCustom(a);
  await check.fill(a,'roomlistcreatewindowgamename','Account Map Test');await check.click(a,'roomlistcreatecreatebutton');await check.click(a,'newbonklobby_editorbutton');
  await check.click(a,'mapeditor_midbox_newbutton');await check.click(a,'mapeditor_midbox_newbutton');await check.delay(650);
  const beforeShapes=await check.evaluate(a,"return Number(d.getElementById('mapeditor_midbox_shapecount').textContent.match(/\\d+/)[0]);");
@@ -37,7 +46,7 @@ try {
  await check.wait(()=>check.evaluate(a,"return !d.getElementById('mapeditor_save_window').getClientRects().length;"),'map saved');
  await check.step('map_saved_gui',{mapName,geometry});
  await a.send('Page.reload',{ignoreCache:true});await check.wait(()=>check.evaluate(a,'return !!w.__localBonk?.context[61]?.userName&&!w.__localBonk.context[61].guest;'),'reload login');
- for(const id of ['pretty_playbutton','sm_gameChoiceCustom','roomlistcreatebutton'])await check.click(a,id);
+ await openCustom(a);
  await check.fill(a,'roomlistcreatewindowgamename','Map Recheck');await check.click(a,'roomlistcreatecreatebutton');await check.click(a,'newbonklobby_editorbutton');
  await check.click(a,'mapeditor_midbox_loadbutton');await check.click(a,'maploadtypedropdowntitle');await check.click(a,'maploadtypedropdownoption7');
  await check.wait(()=>check.evaluate(a,`return [...d.querySelectorAll('#maploadwindowmapscontainer .maploadwindowtextname')].some(e=>e.textContent===${JSON.stringify(mapName)});`),'saved map card');
