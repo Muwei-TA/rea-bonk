@@ -53,3 +53,15 @@ test('static controls preserve protocol values and load translations before the 
   assert.match(page, /自定义房间/);
   assert.match(page, /皮肤管理/);
 });
+
+test('bundled Moment displays Chinese relative dates while preserving stored date formats', async () => {
+  const context = { document: { addEventListener() {} } };
+  context.window = context;
+  vm.runInNewContext(await fs.readFile(new URL('../public/js/moment.min.js', import.meta.url), 'utf8'), context);
+  vm.runInNewContext(zh, context);
+  const now = context.moment.utc('2026-10-14T00:00:00Z');
+  assert.equal(context.moment.utc('2026-10-13T00:00:00Z').from(now), '1天前');
+  assert.equal(context.moment.utc('2026-10-14T02:00:00Z').from(now), '2小时后');
+  assert.equal(now.format('YYYY-MM-DD HH:mm:ss'), '2026-10-14 00:00:00');
+  assert.equal(context.__bonkZh.text('P2P ready'), '游戏客户端已就绪');
+});

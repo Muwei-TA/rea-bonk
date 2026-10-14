@@ -1,5 +1,10 @@
 // Only built-in client constants pass through this dictionary. User content never does.
 (function () {
+  // The bundled Moment has only English relative map timestamps.
+  if (window.moment) window.moment.updateLocale('en', { relativeTime: {
+    future: '%s后', past: '%s前', s: '几秒', ss: '%d秒', m: '1分钟', mm: '%d分钟',
+    h: '1小时', hh: '%d小时', d: '1天', dd: '%d天', M: '1个月', MM: '%d个月', y: '1年', yy: '%d年',
+  } });
   const messages = {
   "Playing": "正在游戏",
   "Join": "加入",
@@ -327,8 +332,8 @@
   "Joined room, awaiting first data": "已加入房间，正在等待初始数据",
   "Connected, synchronizing...": "已连接，正在同步…",
   "Synchronized": "同步完成",
-  "Still waiting for P2P...": "正在等待玩家直连…",
-  "P2P ready": "玩家直连已就绪",
+  "Still waiting for P2P...": "正在初始化游戏客户端…",
+  "P2P ready": "游戏客户端已就绪",
   "Initial data timeout.": "等待初始数据超时。",
   "Auto Joining...": "正在自动加入…",
   "Unknown": "未知",
