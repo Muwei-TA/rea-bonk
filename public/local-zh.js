@@ -1,10 +1,5 @@
 // Only built-in client constants pass through this dictionary. User content never does.
 (function () {
-  // The bundled Moment has only English relative map timestamps.
-  if (window.moment) window.moment.updateLocale('en', { relativeTime: {
-    future: '%s后', past: '%s前', s: '几秒', ss: '%d秒', m: '1分钟', mm: '%d分钟',
-    h: '1小时', hh: '%d小时', d: '1天', dd: '%d天', M: '1个月', MM: '%d个月', y: '1年', yy: '%d年',
-  } });
   const messages = {
   "Playing": "正在游戏",
   "Join": "加入",

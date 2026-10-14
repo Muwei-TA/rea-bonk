@@ -11,6 +11,8 @@ export function localizeCore(source) {
     .replace('function a6N(g_h){', 'function a6N(g_h){arguments[0]=window.__bonkZh.text(arguments[0]);')
     // The editor label can share a word with a Box2D or PIXI member (e.g. Length).
     .replace('function t_N(F4I,t4H,e_S,P70){', 'function t_N(F4I,t4H,e_S,P70){arguments[1]=window.__bonkZh.text(arguments[1]);')
+    // The client replaces English relative-time settings after loading the Chinese locale.
+    .replace('moment[t$e[5][1360]][t$e[5][1703]](k7V.U3q(2222));', "moment.locale('zh-cn');moment[t$e[5][1360]][t$e[5][1703]](k7V.U3q(2222));")
     .replaceAll('"FIRST TO "', '"先赢 "')
     .replaceAll('" WINS"', '" 回合获胜"')
     .replaceAll('"Red Team"', '"红队"')

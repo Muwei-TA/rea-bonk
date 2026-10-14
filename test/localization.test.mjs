@@ -59,6 +59,11 @@ test('bundled Moment displays Chinese relative dates while preserving stored dat
   context.window = context;
   vm.runInNewContext(await fs.readFile(new URL('../public/js/moment.min.js', import.meta.url), 'utf8'), context);
   vm.runInNewContext(zh, context);
+  // Reproduce the retained client's late English locale initialization.
+  context.moment.updateLocale('en', { relativeTime: { past: '%s ago', d: '1 day' } });
+  const hook = localizeCore(core).match(/moment\.locale\('zh-cn'\);/);
+  assert(hook, 'the Chinese locale must be restored after the legacy reset');
+  vm.runInNewContext(hook[0], context);
   const now = context.moment.utc('2026-10-14T00:00:00Z');
   assert.equal(context.moment.utc('2026-10-13T00:00:00Z').from(now), '1天前');
   assert.equal(context.moment.utc('2026-10-14T02:00:00Z').from(now), '2小时后');
