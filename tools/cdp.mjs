@@ -1,8 +1,8 @@
 // Isolated, disposable investigation browser; no user profile or credentials.
 import fs from 'node:fs/promises';
 export async function connect(targetId = process.env.REA_TARGET) {
-  const targets = await (await fetch('http://127.0.0.1:19327/json/list')).json();
-  const target = targets.find(t => t.type === 'page' && (targetId ? t.id === targetId : /^(https:\/\/bonk\.io\/|http:\/\/127\.0\.0\.1:3210\/)/.test(t.url)));
+  const targets = await (await fetch(`http://127.0.0.1:${process.env.DEBUG_PORT || 19327}/json/list`)).json();
+  const target = targets.find(t => t.type === 'page' && (targetId ? t.id === targetId : t.url.startsWith(process.env.BONK_URL || 'http://127.0.0.1:3210/')));
   if (!target) throw new Error('Bonk investigation page is unavailable');
   const ws = new WebSocket(target.webSocketDebuggerUrl);
   await new Promise((resolve, reject) => { ws.onopen = resolve; ws.onerror = reject; });

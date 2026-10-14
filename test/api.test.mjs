@@ -183,3 +183,10 @@ test('XP levels match observed original-client runtime thresholds', async t => {
     previous = xp;
   }
 });
+
+test('proxy login limits isolate different accounts and remain case insensitive', async t => {
+  const f = await fixture(t);
+  for (let i = 0; i < 30; i++) assert.equal((await f.post('login_legacy.php', { username: 'BlockedAccount', password: 'wrong' })).e, 'username_fail');
+  assert.equal((await f.post('login_legacy.php', { username: 'blockedaccount', password: 'wrong' })).e, 'rate_limited');
+  assert.equal((await f.register('OtherMember')).r, 'success');
+});

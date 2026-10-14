@@ -17,7 +17,7 @@ export function attachRooms(io, api, { quickMaps = () => [] } = {}) {
     const user = d.guest === true ? null : api.getUser(d.token);
     if (d.guest !== true && !user) throw new Error('Please log in again.');
     const name = user?.userName ?? user?.name ?? d.guestName;
-    if (!text(name, user ? 25 : 15) || !name.trim()) throw new Error('Invalid player name.');
+    if (!text(name, user ? 25 : 120) || !name.trim() || [...name].length > 60 || /[\u0000-\u001f\u007f]/.test(name)) throw new Error('Invalid player name.');
     if (!text(d.peerID ?? '', 128) || !text(d.guestID ?? '', 128) || !bounded(d.avatar, 64_000)) throw new Error('Invalid player profile.');
     return { peerID: d.peerID || '', guestID: d.guestID || d.peerID || '', userName: name.trim(), guest: !user, userID: user?.id ?? null,
       level: user?.level ?? 1, team: 1, ready: false, tabbed: false, avatar: d.avatar, ping: 0 };

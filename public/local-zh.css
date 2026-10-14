@@ -1,0 +1,13 @@
+/* The original fixed-size menus need a CJK font and slightly denser labels. */
+html, body, button, input, select, textarea, div, span, td, option {
+  font-family: "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", sans-serif !important;
+}
+.pretty_bottom_button { font-size: 22px; letter-spacing: 0; }
+.windowTopBar, .brownButton, .roomlisttableheader, .newbonklobby_element {
+  letter-spacing: 0;
+}
+.mapeditor_rightbox_table_leftcell { font-size: 12px; }
+#newswindow_content { white-space: pre-line; line-height: 1.7; }
+#newswindow_back, #newswindow_forward { display: none; }
+#guestOrAccountContainer .brownButton { white-space: nowrap; }
+#settingsContainer { font-size: 14px; }

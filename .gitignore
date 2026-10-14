@@ -3,3 +3,6 @@ data/
 .DS_Store
 output/playwright/*profile*/
 output/playwright/fixture-data/
+output/**/*profile*/
+output/**/test-data/
+output/server-zh-20261014/

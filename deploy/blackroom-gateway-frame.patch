@@ -1,0 +1,193 @@
+--- a/services/blackroom-games-gateway/config.mjs
++++ b/services/blackroom-games-gateway/config.mjs
+@@ -17,0 +18,9 @@
++  check(
++    game.same_origin_frame_paths === undefined ||
++      (Array.isArray(game.same_origin_frame_paths) &&
++        game.same_origin_frame_paths.length <= 1 &&
++        game.same_origin_frame_paths.every(
++          (path) => path === "/gameframe-release.html",
++        )),
++    "Invalid same-origin frame paths",
++  );
+@@ -146,0 +156 @@
++          same_origin_frame_paths,
+@@ -160,0 +171,3 @@
++                ...(same_origin_frame_paths !== undefined
++                  ? { same_origin_frame_paths }
++                  : {}),
+--- a/services/blackroom-games-gateway/gateway.mjs
++++ b/services/blackroom-games-gateway/gateway.mjs
+@@ -420 +420,5 @@
+-            "frame-ancestors 'none'",
++            response.statusCode >= 200 &&
++              response.statusCode < 300 &&
++              game.same_origin_frame_paths?.includes(rawPath)
++              ? "frame-ancestors 'self'"
++              : "frame-ancestors 'none'",
+--- a/services/blackroom-games-gateway/config.test.mjs
++++ b/services/blackroom-games-gateway/config.test.mjs
+@@ -7,0 +8,31 @@
++test("same-origin frames require one exact private allowlisted path", () => {
++  const source = manifest();
++  source.games[0].same_origin_frame_paths = ["/gameframe-release.html"];
++  const result = renderConfigs(source, state, "a".repeat(64));
++  assert.deepEqual(result.gateways.bonk.games[0].same_origin_frame_paths, [
++    "/gameframe-release.html",
++  ]);
++  assert.equal(
++    result.gateways.skribbl.games[0].same_origin_frame_paths,
++    undefined,
++  );
++  assert.equal(result.forum.games[0].same_origin_frame_paths, undefined);
++  source.games[0].same_origin_frame_paths = [];
++  validateManifest(source);
++  for (const paths of [
++    null,
++    "/gameframe-release.html",
++    ["/"],
++    ["/_blackroom/me"],
++    ["/gameframe-release.html/"],
++    ["/gameframe-release.html?x=1"],
++    ["/%67ameframe-release.html"],
++    ["/gameframe-release.html", "/gameframe-release.html"],
++  ]) {
++    source.games[0].same_origin_frame_paths = paths;
++    assert.throws(
++      () => validateManifest(source),
++      /Invalid same-origin frame paths/,
++    );
++  }
++});
+--- a/services/blackroom-games-gateway/gateway.test.mjs
++++ b/services/blackroom-games-gateway/gateway.test.mjs
+@@ -16,0 +17,129 @@
++
++test("only authorized successful exact game-frame responses allow same-origin framing", async () => {
++  const key = randomBytes(32).toString("hex");
++  const grant = randomBytes(32).toString("hex");
++  let upstreamStatus = 200,
++    hits = 0;
++  const upstreamCsp = "connect-src 'self'; frame-ancestors 'self'";
++  const forum = http.createServer((req, res) => {
++    req.resume();
++    if (req.url.endsWith("profile.json"))
++      res.end(JSON.stringify({ username: "Member" }));
++    else if (req.url.endsWith("exchange.json"))
++      res.writeHead(201).end(JSON.stringify({ grant }));
++    else res.writeHead(204).end();
++  });
++  const upstream = http.createServer((req, res) => {
++    hits++;
++    res
++      .writeHead(upstreamStatus, { "Content-Security-Policy": upstreamCsp })
++      .end(req.url);
++  });
++  forum.listen(0, "127.0.0.1");
++  upstream.listen(0, "127.0.0.1");
++  await Promise.all([once(forum, "listening"), once(upstream, "listening")]);
++  const game = {
++    id: "bonk",
++    origin: "",
++    upstream: `http://127.0.0.1:${upstream.address().port}`,
++    websocket_paths: [],
++    same_origin_frame_paths: ["/gameframe-release.html"],
++  };
++  const gateway = createGateway(
++    {
++      key,
++      forumOrigin: "http://forum.games.localhost",
++      forumInternal: `http://127.0.0.1:${forum.address().port}`,
++      secureCookies: false,
++    },
++    game,
++  );
++  gateway.server.listen(0, "127.0.0.1");
++  await once(gateway.server, "listening");
++  game.origin = `http://127.0.0.1:${gateway.server.address().port}`;
++  const payload = `${grant}.${Date.now() + 60000}`;
++  const cookie = `br_game_test=${payload}.${createHmac("sha256", key).update(`${game.id}\n${game.origin}\n${payload}`).digest("hex")}`;
++  const request = (path, extra = {}) =>
++    fetch(game.origin + path, {
++      headers: { Cookie: cookie },
++      redirect: "manual",
++      ...extra,
++    });
++  try {
++    const anonymous = await request("/gameframe-release.html", { headers: {} });
++    assert.equal(anonymous.status, 401);
++    assert.equal(
++      anonymous.headers.get("content-security-policy"),
++      "frame-ancestors 'none'",
++    );
++    assert.equal(hits, 0);
++    for (const path of [
++      "/gameframe-release.html",
++      "/gameframe-release.html?v=1",
++    ]) {
++      const response = await request(path);
++      assert.equal(response.status, 200);
++      assert.equal(
++        response.headers.get("content-security-policy"),
++        `${upstreamCsp}, frame-ancestors 'self'`,
++      );
++    }
++    for (const path of [
++      "/",
++      "/gameframe-release.html/",
++      "/%67ameframe-release.html",
++      "/other.html",
++    ]) {
++      assert.equal(
++        (await request(path)).headers.get("content-security-policy"),
++        `${upstreamCsp}, frame-ancestors 'none'`,
++      );
++    }
++    for (const status of [302, 404, 500]) {
++      upstreamStatus = status;
++      const response = await request("/gameframe-release.html");
++      assert.equal(response.status, status);
++      assert.equal(
++        response.headers.get("content-security-policy"),
++        `${upstreamCsp}, frame-ancestors 'none'`,
++      );
++    }
++    upstreamStatus = 200;
++    const profile = await request("/_blackroom/me");
++    assert.equal(profile.status, 200);
++    assert.equal(
++      profile.headers.get("content-security-policy"),
++      "frame-ancestors 'none'",
++    );
++    const opened = await request("/_blackroom/open", {
++      method: "POST",
++      headers: {
++        Origin: "http://forum.games.localhost",
++        "Content-Type": "application/x-www-form-urlencoded",
++      },
++      body: new URLSearchParams({ ticket: grant, browser_state: grant }),
++    });
++    assert.equal(opened.status, 303);
++    assert.equal(
++      opened.headers.get("content-security-policy"),
++      "frame-ancestors 'none'",
++    );
++    for (const paths of [[], undefined]) {
++      game.same_origin_frame_paths = paths;
++      assert.equal(
++        (await request("/gameframe-release.html")).headers.get(
++          "content-security-policy",
++        ),
++        `${upstreamCsp}, frame-ancestors 'none'`,
++      );
++    }
++  } finally {
++    await gateway.close();
++    forum.closeAllConnections();
++    upstream.closeAllConnections();
++    await Promise.all([
++      new Promise((r) => forum.close(r)),
++      new Promise((r) => upstream.close(r)),
++    ]);
++  }
++});

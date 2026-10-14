@@ -1,0 +1,30 @@
+services:
+  game:
+    image: rea-bonk:chinese-server-20261014
+    container_name: blackroom-rea-bonk
+    environment:
+      PUBLIC_ORIGIN: https://bonk.muwei.xyz
+    volumes:
+      - bonk-data:/data
+    restart: unless-stopped
+    init: true
+    read_only: true
+    tmpfs: [/tmp:size=16m]
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    cpus: 1
+    mem_limit: 512m
+    pids_limit: 128
+    stop_grace_period: 10s
+    logging:
+      driver: json-file
+      options:
+        max-size: 10m
+        max-file: "3"
+networks:
+  default:
+    external: true
+    name: blackroom-games-bonk-backend
+volumes:
+  bonk-data:
+    name: blackroom-rea-bonk-data

@@ -1,6 +1,8 @@
 import fs from 'node:fs/promises';
 import assert from 'node:assert/strict';
 import { connect } from './cdp.mjs';
+const output=process.env.BONK_OUTPUT || 'output/server-zh-20261014';
+await fs.mkdir(output,{recursive:true});
 const c=await connect(process.argv[2]);
 const evaluate=async body=>{const r=await c.send('Runtime.evaluate',{expression:`(()=>{const w=document.querySelector('iframe').contentWindow,d=w.document;${body}})()`,returnByValue:true});if(r.exceptionDetails)throw new Error(r.exceptionDetails.text);return r.result.value;};
 const wait=async f=>{for(let i=0;i<100;i++){try{if(await f())return;}catch{}await new Promise(r=>setTimeout(r,150));}throw new Error('Map GUI timed out');};
@@ -12,6 +14,6 @@ try{
  await wait(()=>evaluate("return !!d.querySelector('#maploadwindowmapscontainer .maploadwindowtextname');"));
  const date=await evaluate("return d.querySelector('#maploadwindowmapscontainer .maploadwindowtextage').innerText;");assert(!date.includes('Invalid')&&!date.startsWith('in '));
  await evaluate("d.querySelector('#maploadwindowmapscontainer .maploadwindowtextname').parentElement.click();");
- await wait(()=>evaluate("return d.getElementById('mapeditor_midbox').innerText.includes('1 physics shapes');"));
- const r={passed:true,date,realSavedMapReloaded:true,geometry:'1 physics shape and 1 spawn (native editor)'};console.log(JSON.stringify(r));await fs.writeFile('output/playwright/map-reload-results.json',JSON.stringify(r,null,2));const shot=await c.send('Page.captureScreenshot',{format:'png'});await fs.writeFile('output/playwright/account-map-reloaded.png',Buffer.from(shot.data,'base64'));
+ await wait(()=>evaluate("return d.getElementById('mapeditor_midbox_shapecount').textContent.match(/\\d+/)?.[0]==='1';"));
+ const r={passed:true,date,realSavedMapReloaded:true,geometry:'1 physics shape and 1 spawn (native editor)'};console.log(JSON.stringify(r));await fs.writeFile(`${output}/map-reload-results.json`,JSON.stringify(r,null,2));const shot=await c.send('Page.captureScreenshot',{format:'png'});await fs.writeFile(`${output}/account-map-reloaded.png`,Buffer.from(shot.data,'base64'));
 }finally{c.close();}
